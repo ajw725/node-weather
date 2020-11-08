@@ -15,6 +15,7 @@ const BASE_URL = 'http://api.weatherstack.com';
 // console.log('Stopping');
 
 const weatherUrl = `${BASE_URL}/current?access_key=${WEATHERSTACK_API_KEY}&query=Boulder`;
-request(weatherUrl, (err, resp, body) => {
-  console.log(resp);
+request(weatherUrl, (_err, _resp, body) => {
+  const weatherData = JSON.parse(body);
+  console.log('weatherData', weatherData);
 });
